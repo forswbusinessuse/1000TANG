@@ -2,9 +2,8 @@
 	<header class="main">
 		<h1>{{_category}}</h1>
 	</header>
-	<section>
-		<span class="image main"><img src="images/pic11.jpg" alt="" /></span>
-		
+	<section *ngIf="_home">
+		<!--<span class="image main"><img src="images/pic11.jpg" alt="" /></span>-->
 		<h2>介紹教育部USR計畫</h2>
 		<p>教育部推動大專校院社會責任實踐計畫補助要點</p>
 		<p>一、目的：教育部（以下簡稱本部）為推動大專校院社會責任實踐計畫(以下簡稱本計畫)，期強化大專校院與區域城鄉發展(社區、產業、文化、智慧城市)之在地連結合作，實踐其社會責任，並透過人文關懷及協助解決區域問題之概念，鼓勵教師帶領學生以跨系科、跨團隊或跨校聯盟之結合，或以結合地方政府及產業資源，共同促進在地產業聚落、社區文化創新發展，並增進學生對在地認同，進而激發在地就業或創業，特訂定本要點。</p>
@@ -96,12 +95,8 @@
 	</section>
 	
 	<!-- 夢想起飛 -->
-	<section  style="font-family:Microsoft JhengHei;">
-		<header class="main">
-			<h1>夢想起飛</h1>
-		</header>
-
-		<span class="image main"><img src="images/pic11.jpg" alt="" /></span>
+	<section *ngIf="_takeOff">
+		<!--<span class="image main"><img src="images/pic11.jpg" alt="" /></span>-->
 		
 		<h2>意涵</h2>
 		<p>本創新教學試辦課程設計過程，採取PDCAB循環的實踐，包括規劃(plan)、實踐(do)、檢視(check)、回饋與改善(action)與標竿學習(benchmarking)等步驟，透過，逐步落實。</p>
@@ -121,18 +116,11 @@
 		<h2>活動照片</h2>
 		<p>「頑皮塘101數位文創智造夢工廠」創新教學試辦計畫運用觀念新穎、共同參與、學生主體、多元適性、科技善用、永續創新等原則加以設計。</p>
 		
-		
-		<span class="image main"><img src="images/pic1.jpg" alt="" /></span>
-		
 	</section>
 	
 	<!-- 解夢分享 -->
-	<section  style="font-family:Microsoft JhengHei;">
-		<header class="main">
-			<h1>解夢分享</h1>
-		</header>
-
-		<span class="image main"><img src="images/pic11.jpg" alt="" /></span>
+	<section *ngIf="_interpretation">
+		<!--<span class="image main"><img src="images/pic11.jpg" alt="" /></span>-->
 		
 		<h2>意涵</h2>
 		<p>解夢：主要是以傳統教學方法，傳授有關桃園埤塘的基本知識，稱為「基礎課程」共21小時，由人社院參與教師與社區實務工作者擔任師資，以觀念傳遞、互動討論與知識分享為主。</p>
@@ -149,17 +137,11 @@
 		<p>「頑皮塘101數位文創智造夢工廠」創新教學試辦計畫運用觀念新穎、共同參與、學生主體、多元適性、科技善用、永續創新等原則加以設計。</p>
 		
 		
-		<span class="image main"><img src="images/pic1.jpg" alt="" /></span>
-		
 	</section>
 	
 	<!-- 踏夢之旅 -->
-	<section  style="font-family:Microsoft JhengHei;">
-		<header class="main">
-			<h1>踏夢之旅</h1>
-		</header>
-
-		<span class="image main"><img src="images/pic11.jpg" alt="" /></span>
+	<section *ngIf="_journey">
+		<!--<span class="image main"><img src="images/pic11.jpg" alt="" /></span>-->
 		
 		<h2>意涵</h2>
 		<p>踏夢：實地巡禮埤塘8小時，由教師與輔導員帶領，分組進行桃園埤塘巡禮，包括：中壢士校大池、八德埤塘生態公園、楊梅秀才山5B埤塘公園、龍潭觀光大池新屋、新屋後湖塘等。由各組自行認養要「夢遊」的埤塘與社區，同時選擇從玩文學、玩美學、玩文創、玩影音或玩生態的角度進行「築夢」作品的創作計畫，並於課程結束前完成逐夢作品。</p>
@@ -174,19 +156,11 @@
 		<h2>活動照片</h2>
 		<p>「頑皮塘101數位文創智造夢工廠」創新教學試辦計畫運用觀念新穎、共同參與、學生主體、多元適性、科技善用、永續創新等原則加以設計。</p>
 		
-		
-		<span class="image main"><img src="images/pic1.jpg" alt="" /></span>
-		
 	</section>
 	
 	<!-- 築夢逐夢 -->
-	<section  style="font-family:Microsoft JhengHei;">
-		<header class="main">
-			<h1>築夢逐夢</h1>
-		</header>
-
-		<span class="image main"><img src="images/pic11.jpg" alt="" /></span>
-		
+	<section *ngIf="_buildAndPursue">
+		<!--<span class="image main"><img src="images/pic11.jpg" alt="" /></span>-->
 		<h2>意涵</h2>
 		<p>築夢：創新教學課程34小時，由人社院參與教師與業師共同擔任築夢師資，以相互合作精神共同操作，採取問題導向教學法，由業師提出問題，學生提出解決構想。課程主題係以埤塘為主題，包括下列課程：</p>
 		<p>(一)「玩影音」實作課程：由各組決定要採用的影音數位科技後，自行邀請專業師資授課，例如學習手機攝影、設計LOGO等，計10小時，授課鐘點費由本教學計畫支付。</p>
@@ -205,7 +179,4 @@
 
 		<h2>活動照片</h2>
 		<p>「頑皮塘101數位文創智造夢工廠」創新教學試辦計畫運用觀念新穎、共同參與、學生主體、多元適性、科技善用、永續創新等原則加以設計。</p>
-		
-		
-		<span class="image main"><img src="images/pic1.jpg" alt="" /></span>
 </section>
