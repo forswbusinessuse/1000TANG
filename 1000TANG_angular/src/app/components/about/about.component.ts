@@ -6,6 +6,9 @@ import { ActivatedRoute } from "@angular/router";
 //Consts
 import { CATEGORY_CODE as $ } from "../../consts/category-codes"; 
 
+//Services
+import { HeaderService } from "../../services/header.service";
+
 @Component({ 
 	selector: "about", 
 	templateUrl: "./about.component.html", 
@@ -25,17 +28,18 @@ export class AboutComponent implements OnInit, OnDestroy {
 	private get _latest_news(): boolean { return this._categoryCode == $.ABOUT.LATEST_NEWS; }
 	private get _contact_us(): boolean { return this._categoryCode == $.ABOUT.CONTACT_US; }
 	
-	constructor(private route: ActivatedRoute) {
+	constructor(private route: ActivatedRoute, private headerService: HeaderService) {
 	}
 	
 	ngOnInit(): void {
 		this._routeSubscription = this.route.params.subscribe(params => {
-			this._category = this.categoryToCHT(params["category"]);
+			let code = params["category"];
+			this._categoryCode = code;
+			this.headerService.SetTitle(this.categoryToCHT(code));
 		});
 	}
 	
 	private categoryToCHT(category: string): string {
-		this._categoryCode = category;
 		switch(category) {
 			case $.ABOUT.ABOUT_US: 
 				return "關於我們";

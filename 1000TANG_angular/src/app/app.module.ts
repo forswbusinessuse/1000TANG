@@ -17,9 +17,13 @@ import { NotFoundComponent } from "./components/not-found/not-found.component";
 //Widgets
 import { SidebarLeft } from "./widgets/sidebar-left/sidebar-left.widget";
 import { AppHeader } from "./widgets/app-header/app-header.widget";
+import { PageHeader } from "./widgets/page-header/page-header.widget";
 
 //Directives
 import { BasicHighlightDirective } from "./directives/basic-highlight/basic-highlight.directive";
+
+//Services
+import { HeaderService } from "./services/header.service";
 
 let modules = [
 	HttpModule, 
@@ -39,7 +43,8 @@ let components = [
 
 let widgets = [ 
 	SidebarLeft, 
-	AppHeader
+	AppHeader, 
+	PageHeader
 ];
 
 let directives = [
@@ -47,7 +52,7 @@ let directives = [
 ];
 
 let services = [
-	
+	HeaderService
 ];
 
 const routeModule = [

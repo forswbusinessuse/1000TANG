@@ -4,7 +4,10 @@ import { Component, OnInit, OnDestroy } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 
 //Consts
-import { CATEGORY_CODE as $ } from "../../consts/category-codes"; 
+import { CATEGORY_CODE as $ } from "../../consts/category-codes";
+
+//Services
+import { HeaderService } from "../../services/header.service";
 
 @Component({ 
 	selector: "project", 
@@ -23,12 +26,14 @@ export class ProjectComponent {
 	private get _content(): boolean { return this._categoryCode == $.PROJECT.CONTENT; }
 	private get _academic_resources(): boolean { return this._categoryCode == $.PROJECT.ACADEMIC_RESOURCES; }
 	
-	constructor(private route: ActivatedRoute) {
+	constructor(private route: ActivatedRoute, private headerService: HeaderService) {
 	}
 	
 	ngOnInit(): void {
 		this._routeSubscription = this.route.params.subscribe(params => {
-			this._category = this.categoryToCHT(params["category"]);
+			let code = params["category"];
+			this._categoryCode = code;
+			this.headerService.SetTitle(this.categoryToCHT(code));
 		});
 	}
 	

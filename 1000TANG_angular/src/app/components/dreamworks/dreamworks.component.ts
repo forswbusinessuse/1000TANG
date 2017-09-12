@@ -6,6 +6,9 @@ import { ActivatedRoute } from "@angular/router";
 //Consts
 import { CATEGORY_CODE as $ } from "../../consts/category-codes"; 
 
+//Services
+import { HeaderService } from "../../services/header.service";
+
 @Component({ 
 	selector: "dreamworks", 
 	templateUrl: "./dreamworks.component.html", 
@@ -24,12 +27,14 @@ export class DreamworksComponent implements OnInit, OnDestroy {
 	private get _journey(): boolean { return this._categoryCode == $.DREAMWORK.JOURNEY; }
 	private get _buildAndPursue(): boolean { return this._categoryCode == $.DREAMWORK.BUILD_AND_PURSUE; }
 	
-	constructor(private route: ActivatedRoute) {
+	constructor(private route: ActivatedRoute, private headerService: HeaderService) {
 	}
 	
 	ngOnInit(): void {
 		this._routeSubscription = this.route.params.subscribe(params => {
-			this._category = this.categoryToCHT(params["category"]);
+			let code = params["category"];
+			this._categoryCode = code;
+			this.headerService.SetTitle(this.categoryToCHT(code));
 		});
 	}
 	
